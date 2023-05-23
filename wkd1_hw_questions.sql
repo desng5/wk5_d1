@@ -87,7 +87,8 @@ FROM address;
 SELECT film_id, COUNT(actor_id) AS actors
 FROM film_actor
 GROUP BY film_id
-ORDER BY COUNT(actor_id) DESC;
+ORDER BY COUNT(actor_id) DESC
+LIMIT 1;
 -- HAVING COUNT(actor_id) = (
 -- 	SELECT MAX(actors)
 -- 	FROM (
@@ -116,7 +117,6 @@ HAVING store_id = 1;
 SELECT COUNT(amount) as amount_count
 	FROM payment
 	WHERE customer_id BETWEEN 380 AND 430
-	GROUP BY amount
 	HAVING COUNT(rental_id) > 250;
 
 -- Answer: 3??
