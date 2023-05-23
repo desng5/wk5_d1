@@ -30,10 +30,16 @@ WHERE amount >= 3.99 AND amount <= 5.99;
 --  GROUP BY film_id
 --  HAVING COUNT(*) = 7
 
-SELECT film_id, COUNT(film_id) AS film_count
+--SELECT film_id, COUNT(film_id) AS film_count
+--FROM inventory
+--GROUP BY film_id
+--ORDER BY COUNT = 7;
+
+select count(distinct film_id)
 FROM inventory
 GROUP BY film_id
-ORDER BY COUNT = 7;
+HAVING count(film_id) = 7;
+
 
 -- Answer:  
 
